@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Happy Birthday</title>
+  <style>
+    :root {
+      --bg: #14201b;
+      --ink: #bcd2bc;
+      --muted: #bdcdc6;
+      --accent: #e3a72f;
+      --accent-ink: #1d2b26;
+      --frame: #1a2417;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 { font-size: 2.5rem; margin: 24px 0 12px; }
+    p { margin: 0 0 16px; color: var(--muted); font-size: 1.1rem; }
+    .images-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .gif-frame {
+      width: 45%;
+      background: var(--frame);
+      border-radius: 20px;
+      padding: 10px;
+    }
+    .gif-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+    }
+    footer { text-align: center; padding: 16px; font-size: 0.9rem; color: var(--muted); }
+    .music {
+      align-self: flex-end;
+      margin: 12px;
+      padding: 8px 16px;
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--frame);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgm" src="her.mp3" loop preload="auto"></audio>
+  <button class="music" id="musicBtn" type="button" aria-pressed="false">Play music</button>
+  <main>
+    <!-- Two images side by side -->
+    <div class="images-row">
+      <div class="gif-frame">
+        <img src="pinkvid.gif" alt="Bouquet of flowers">
+      </div>
+      <div class="gif-frame">
+        <img src="bluevid.gif" alt="Birthday cake">
+      </div>
+    </div>
+
+    <h1>Happy Birthday Munuuu💝</h1>
+    <p>A wonderful day of a Gorgeous person </p>
+    <p>Since it's your first birthday , So I've prepared something small present for you hope u like itt(❁´◡`❁) </p>
+    <a class="btn" href="wish.html">Next</a>
+  </main>
+  <footer>
+    <p>&copy; 2026 <a href="https://github.com/Mausam-Shrestha0828" target="_blank" rel="noopener noreferrer" style="color: white;">Mausam</a>. All rights reserved.</p>
+  </footer>
+  <script>
+    (function(){
+      const a = document.getElementById("bgm");
+      const b = document.getElementById("musicBtn");
+
+      function label(){ b.textContent = a.paused ? "Play music" : "Pause music"; }
+
+      function saveState(){
+        try {
+          sessionStorage.setItem("bgmTime", a.currentTime);
+          sessionStorage.setItem("bgmOn", a.paused ? "0" : "1");
+        } catch(e){}
+      }
+
+      b.addEventListener("click", () => {
+        if(a.paused){ a.play().catch(()=>{}); } else { a.pause(); }
+        saveState();
+      });
+
+      a.addEventListener("play", label);
+      a.addEventListener("pause", label);
+      window.addEventListener("pagehide", saveState);
+      setInterval(() => { if(!a.paused) saveState(); }, 1000);
+
+      try {
+        const t = parseFloat(sessionStorage.getItem("bgmTime"));
+        if(t>0){ a.addEventListener("loadedmetadata", ()=>{ a.currentTime=t; }, {once:true}); }
+        if(sessionStorage.getItem("bgmOn")==="1"){ a.play().catch(()=>{}); }
+      } catch(e){}
+      label();
+    })();
+  </script>
+</body>
+</html>

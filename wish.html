@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Happy Birthday</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2b26'/%3E%3Crect x='18' y='30' width='28' height='20' rx='3' fill='%23e3a72f'/%3E%3Crect x='30' y='18' width='4' height='12' rx='2' fill='%23d9e4dc'/%3E%3Cpath d='M32 10c3 3 3 6 0 8c-3-2-3-5 0-8z' fill='%23d9e4dc'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #d9e4dc;
+      --ink: #6e9c8c;
+      --muted: #31be83;
+      --accent: #e3a72f;
+      --accent-ink: #1d2b26;
+      --frame: #f3f7f2;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14201b;
+        --ink: #e8f0ea;
+        --muted: #a9bcb1;
+        --accent: #e3a72f;
+        --accent-ink: #14201b;
+        --frame: #1f2f28;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+    }
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .music {
+  align-self: flex-end;
+  margin: 12px 12px 0 0;
+  min-height: 44px;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--frame);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  cursor: pointer;
+}
+    h1 { font-size: clamp(2rem, 7vw, 3.2rem); line-height: 1.15; font-weight: 700; margin: 24px 0 12px; }
+    h2 { font-size: clamp(1.5rem, 5vw, 2rem); margin: 0 0 12px; }
+    p { margin: 0 0 16px; max-width: 46ch; color: var(--muted); font-size: 1.1rem; }
+    .gif-frame { width: min(260px, 70%); background: var(--frame); border-radius: 20px; padding: 10px; }
+    .gif-frame img { display: block; width: 100%; height: auto; border-radius: 12px; }
+    .photos { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 20px 0 24px; width: 100%; }
+    .photo { width: min(220px, 44%); background: var(--frame); border-radius: 16px; padding: 8px; }
+    .photo img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; background: var(--bg); }
+    @media (max-width: 380px) { .photo { width: 80%; } }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: 0;
+      cursor: pointer;
+      min-height: 44px;
+    }
+    .btn:hover { filter: brightness(0.95); }
+    .btn:focus-visible, a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    footer { text-align: center; padding: 16px 20px 24px; font-size: 0.9rem; color: var(--muted); }
+    footer a { color: var(--muted); margin: 0 8px; }
+    .legal { align-items: flex-start; text-align: left; }
+    .legal p { max-width: 62ch; font-size: 1rem; }
+    .legal h1 { margin-top: 0; }
+    .legal h2 { font-size: 1.2rem; margin-top: 20px; }
+    
+    .music:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  
+  <audio id="bgm" src="her.mp3"  loop preload="auto"></audio>
+  <button class="music" id="musicBtn" type="button" aria-pressed="false">Play music</button>
+  <main>
+    <h2><b>A Gorgeous person💝</b></h2>
+    <div class="photos">
+      <div class="photo">
+        <img src="munu2.jpg" alt="Photo one">
+      </div>
+      <div class="photo">
+        <img src="munu9.jpg" alt="Photo two">
+      </div>
+    </div>
+    <p>Muje abhi Bhi malum hai ki ham 19/January/2026 ko Roblox ke "Are you lonely?" Walle game par mile the eak saal toh abhi pura nahi hua par i feel likemai aap ko bohot phele se hi janta hu🤍</p>
+    <p>Aap ke sath Yarr aab family wale ki tara comfortable hone laga hu Kuch Bhi bol deta hu aap ko rooj good morning and goodnight text Karna is in my daily routine now days goodnightt toh kabhi hi bolta hu kyu ki kab sogaya pata hi nahi chalta . (●'◡'●)</p>
+    <p>aap ki smile ekdam pyarii haii yarr just wow intop of it ur voice🤌 is just like adding extra sugar to rasmalai eventhough bass eak barr hi suna hu par abi bhi yadd hai .(≧▽≦) juub bhi aap ka chubby cheeks dekh ta huu na muje bite karne ka man karta hai🤤. i know its kinda appropriate but cant hide the factt from u</p>
+    <p>phele Mai dosto ko sath bas kafi jada game khela karta tha par abhi game ki time significantly Kam ho chuki hai dont know but it seems it's is ur side effect💕 and i guess padhai ka bhi pressure  hai wo alag baat hai ki padh ta nahi hu💔.</p>
+    <p>And that ungrateful behavior of urrs Jaab aap ne muje Whatsapp pe block  kiye thee tab muje laga tha this is the end of our bond but  koin naa nahi tuta hamara bond👫.lets not remember that ungateful past memory</p>
+    <p>Dont hesitate to reach out to me anytime if u are  in bad mood or sad just dont  hide any thing be comfortable with me  i will try to lightup ur mood  through the chat or talk in call I'm always available for you feel free to call any time  💚</p>
+    <p>aap ko pata hai ya nahi eak bar aap ne pucha tha ki if the love/affection change through out the time then i didn't know the answer but i think i know the answer now😌 </p>
+    <p> yarr kabhi kabhi gossip bhi suna liya karoonad please share the small thing also i kida like what happen recently with u if kuch personal hi hai toh aap ki marji i respect ur privacy.spill the tea some time also😅</p>
+    <p>Abhi muje lagta hai ki aap ke sath mera bond ya jo khe loo wo aur bhi strong ho gaya hai and I am very happy for that and i want to know more about you ,ur family, culture and your place pretty much everything. very Thankful  to ur mumma for giving birth to a wonderful person💝 .Love to ur family💞</p>
+    <h1>Happy Birthday Munuuu 💐</h1><br>
+    <a class="btn ghost" href="index.html">Home page</a>
+  </main>
+  <footer>
+   <center>
+      <p>&copy; 2026<a href="https://github.com/Mausam-Shrestha0828" target="_blank" rel="noopener noreferrer" style="color: white;">Mausam</a>. All rights reserved.</p>
+    </center>
+  </footer>
+  <script>
+    // Hides the broken image icon until you add a real image path in src
+    document.querySelectorAll("img").forEach(function (img) {
+      img.addEventListener("error", function () { img.style.visibility = "hidden"; });
+    });
+
+    // Background music. Browsers block sound until the visitor taps, so the button starts it.
+    (function () {
+      var a = document.getElementById("bgm");
+      var b = document.getElementById("musicBtn");
+
+      function label() {
+        b.textContent = a.paused ? "Play music" : "Pause music";
+        b.setAttribute("aria-pressed", a.paused ? "false" : "true");
+      }
+      function saveTime() {
+        try { sessionStorage.setItem("bgmTime", String(a.currentTime)); } catch (e) {}
+      }
+
+      b.addEventListener("click", function () {
+        if (a.paused) {
+          a.play().catch(function () {});
+          try { sessionStorage.setItem("bgmOn", "1"); } catch (e) {}
+        } else {
+          a.pause();
+          try { sessionStorage.setItem("bgmOn", "0"); } catch (e) {}
+        }
+      });
+      a.addEventListener("play", label);
+      a.addEventListener("pause", label);
+      window.addEventListener("pagehide", saveTime);
+      setInterval(function () { if (!a.paused) saveTime(); }, 1000);
+
+      // Carry the song over from the other page
+      try {
+        var t = parseFloat(sessionStorage.getItem("bgmTime"));
+        if (t > 0) {
+          if (a.readyState >= 1) { a.currentTime = t; }
+          else { a.addEventListener("loadedmetadata", function () { a.currentTime = t; }, { once: true }); }
+        }
+        if (sessionStorage.getItem("bgmOn") === "1") { a.play().catch(function () {}); }
+      } catch (e) {}
+      label();
+    })();
+  </script>
+</body>
+</html>
